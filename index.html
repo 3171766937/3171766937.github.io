@@ -69,6 +69,87 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python虚拟环境以及python java的多版本管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/07/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8Apython%20java%E7%9A%84%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2024-07-07T01:29:31.356Z" itemprop="datePublished">2024-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="python的虚拟环境设置与多版本管理"><a href="#python的虚拟环境设置与多版本管理" class="headerlink" title="python的虚拟环境设置与多版本管理"></a>python的虚拟环境设置与多版本管理</h1><h3 id="python的虚拟环境设置"><a href="#python的虚拟环境设置" class="headerlink" title="python的虚拟环境设置"></a>python的虚拟环境设置</h3><h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>由于在实际应用过程中，我们通过python下载的依赖库种类版本较多，容易引起冲突。因而考虑通过设置python的虚拟环境，从而实现每一脚本运行的时候都有自己独立的虚拟环境从而实现稳定运行</p>
+<h5 id="虚拟环境工具——venv"><a href="#虚拟环境工具——venv" class="headerlink" title="虚拟环境工具——venv"></a>虚拟环境工具——venv</h5><p>venv是python3中自带的配置虚拟环境的工具</p>
+<h5 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h5><p>python -m venv 文件名</p>
+<p><img src="/../images/image-20240707093956227.png" alt="image-20240707093956227"></p>
+<p>在对应的路径下会生成我们自己命名的文件夹，里面是全新python环境</p>
+<p><img src="/../images/image-20240707094026220.png" alt="image-20240707094026220"></p>
+<p><img src="/../images/image-20240707094132519.png" alt="image-20240707094132519"></p>
+<p>cd到Script目录下查看发现只有pip一个库</p>
+<p><img src="/../images/image-20240707094309917.png" alt="image-20240707094309917"></p>
+<h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>在Scripts目录下activate.bat激活虚拟环境</p>
+<p><img src="/../images/image-20240707100244371.png" alt="image-20240707100244371"></p>
+<h5 id="虚拟环境应用"><a href="#虚拟环境应用" class="headerlink" title="虚拟环境应用"></a>虚拟环境应用</h5><p>在虚拟环境中可以进行pip库的随意安装</p>
+<p><img src="/../images/image-20240707101702724.png" alt="image-20240707101702724"></p>
+<h5 id="退出虚拟环境"><a href="#退出虚拟环境" class="headerlink" title="退出虚拟环境"></a>退出虚拟环境</h5><p><img src="/../images/image-20240707103601815.png" alt="image-20240707103601815"></p>
+<h3 id="python的多版本管理"><a href="#python的多版本管理" class="headerlink" title="python的多版本管理"></a>python的多版本管理</h3><h5 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h5><p>工具脚本的使用过程中，有些需要py3环境有些需要py2环境，而一般情况下只能存在一个py环境这就需要对py进行多版本的管理配置</p>
+<h5 id="下载安装pyenv"><a href="#下载安装pyenv" class="headerlink" title="下载安装pyenv"></a>下载安装pyenv</h5><p>pyenv是管理python多本版的工具，在使用前需要将系统原来的python环境删除</p>
+<p>将下载的pyenv放在英文路径下并重命名为pyenv</p>
+<p><img src="/../images/image-20240707103139827.png" alt="image-20240707103139827"></p>
+<p>找到bin目录并配置该目录下的环境变量</p>
+<p><img src="/../images/image-20240707103233421.png" alt="image-20240707103233421"></p>
+<p><img src="/../images/image-20240707103344967.png" alt="image-20240707103344967"></p>
+<p>再在path中加入</p>
+<p>%PYENV%\bin<br>%PYENV%\shims</p>
+<p><img src="/../images/image-20240707103439109.png" alt="image-20240707103439109"></p>
+<p>验证是否安装成功</p>
+<p>cmd中输入pyenv</p>
+<p><img src="/../images/image-20240707103706789.png" alt="image-20240707103706789"></p>
+<h5 id="pyenv基本命令"><a href="#pyenv基本命令" class="headerlink" title="pyenv基本命令"></a>pyenv基本命令</h5><p><img src="/../images/image-20240707104750794.png" alt="image-20240707104750794"></p>
+<p>commands  ————-列出所有可用的pyenv命令<br>duplicate   ————-创建一个重复的python环境<br>local        ————–设置或显示特定于本地应用程序的Python版本<br>global     ————–设置或显示全局Python版本<br>shell        ————–设置或显示特定于shell的Python版本<br>install      ————–Python构建安装Python版本<br>uninstall    ————-卸载特定的Python版本<br>update      ————-更新缓存的版本数据库<br>rehash      ————-重新安装pyenv垫片（安装可执行文件后运行此操作）<br>vname       ————-显示当前的Python版本<br>version      ————-显示当前Python版本及其来源<br>version-name —————-显示当前的Python版本<br>versions    —————–列出pyenv可用的所有Python版本<br>exec        —————–通过首先准备路径来运行可执行文件，以便选定的Python<br>which       ————– 显示可执行文件的完整路径<br>whence     ———————列出包含给定可执行文件的所有Python版本</p>
+<h5 id="pyenv进行多版本管理"><a href="#pyenv进行多版本管理" class="headerlink" title="pyenv进行多版本管理"></a>pyenv进行多版本管理</h5><p>查看可安装的python环境</p>
+<p><img src="/../images/image-20240707105408739.png" alt="image-20240707105408739"></p>
+<p>选择我们想要的python版本安装</p>
+<p><img src="/../images/image-20240707105917064.png" alt="image-20240707105917064"></p>
+<h5 id="查看python版本"><a href="#查看python版本" class="headerlink" title="查看python版本"></a>查看python版本</h5><p><img src="/../images/image-20240707112414506.png" alt="image-20240707112414506"></p>
+<h5 id="切换python版本"><a href="#切换python版本" class="headerlink" title="切换python版本"></a>切换python版本</h5><p>我们想用什么版本调用对应的python版本即可</p>
+<p><img src="/../images/image-20240707112503916.png" alt="image-20240707112503916"></p>
+<p><img src="/../images/image-20240707112518027.png" alt="image-20240707112518027"></p>
+<h1 id="linux中实现Java的多版本配置"><a href="#linux中实现Java的多版本配置" class="headerlink" title="linux中实现Java的多版本配置"></a>linux中实现Java的多版本配置</h1><p>通过update-alternatives来实现</p>
+<h5 id="安装java"><a href="#安装java" class="headerlink" title="安装java"></a>安装java</h5><p>将不同版本的java解压安装到该目录下</p>
+<p>&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;</p>
+<p><img src="/../images/image-20240707163244103.png" alt="image-20240707163244103"></p>
+<h5 id="配置update-alternatives"><a href="#配置update-alternatives" class="headerlink" title="配置update-alternatives"></a>配置update-alternatives</h5><p>通过如下命令进行配置（最后数字为优先级）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-17.0.11/bin/java 4</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-17.0.11/bin/javac 4</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20240707164723696.png" alt="image-20240707164723696"></p>
+<p><img src="/../images/image-20240707164815387.png" alt="image-20240707164815387"></p>
+<p><img src="/../images/image-20240707164835161.png" alt="image-20240707164835161"></p>
+<h5 id="切换java-javac版本"><a href="#切换java-javac版本" class="headerlink" title="切换java javac版本"></a>切换java javac版本</h5><p><img src="/../images/image-20240707164848944.png" alt="image-20240707164848944"></p>
+<p><img src="/../images/image-20240707164900803.png" alt="image-20240707164900803"></p>
+<p><img src="/../images/image-20240707164909891.png" alt="image-20240707164909891"></p>
+<p><img src="/../images/image-20240707164927507.png" alt="image-20240707164927507"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/07/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8Apython%20java%E7%9A%84%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" data-id="clybbdwnh00008ove6xsy6v6s" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-google搜索语法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/02/google%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95/" class="article-date">
@@ -230,6 +311,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/07/07/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8Apython%20java%E7%9A%84%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2024/07/02/google%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95/">google搜索语法</a>
