@@ -190,6 +190,80 @@
 <h3 id="misc32"><a href="#misc32" class="headerlink" title="misc32"></a>misc32</h3><p>用脚本爆破出正确的宽高</p>
 <p><img src="/../images/image-20240717222057897.png" alt="image-20240717222057897"></p>
 <p><img src="/../images/image-20240717222048440.png" alt="image-20240717222048440"></p>
+<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web信息泄露"><a href="#web信息泄露" class="headerlink" title="web信息泄露"></a>web信息泄露</h2><h3 id="web1"><a href="#web1" class="headerlink" title="web1"></a>web1</h3><p>查看网站源码即可</p>
+<p><img src="/../images/image-20240720214446305.png" alt="image-20240720214446305"></p>
+<h3 id="web2"><a href="#web2" class="headerlink" title="web2"></a>web2</h3><p>在url前加view-source即可查看网页源代码获取flag</p>
+<p><img src="/../images/image-20240720215051665.png" alt="image-20240720215051665"></p>
+<h3 id="web3"><a href="#web3" class="headerlink" title="web3"></a>web3</h3><p>用burp抓包，flag就在返回包里面</p>
+<p><img src="/../images/image-20240721163042627.png" alt="image-20240721163042627"></p>
+<p><img src="/../images/image-20240721163030283.png" alt="image-20240721163030283"></p>
+<h3 id="web4"><a href="#web4" class="headerlink" title="web4"></a>web4</h3><p>访问robots.txt  发现flag</p>
+<p><img src="/../images/image-20240721164735767.png" alt="image-20240721164735767"></p>
+<p><img src="/../images/image-20240721164859124.png" alt="image-20240721164859124"></p>
+<h3 id="web5"><a href="#web5" class="headerlink" title="web5"></a>web5</h3><p>访问index.phps</p>
+<p><img src="/../images/image-20240721165306766.png" alt="image-20240721165306766"></p>
+<h3 id="web6"><a href="#web6" class="headerlink" title="web6"></a>web6</h3><p> 源码泄露  访问<a target="_blank" rel="noopener" href="http://www.zip/">www.zip</a></p>
+<p><img src="/../images/image-20240721170727975.png" alt="image-20240721170727975"></p>
+<p><img src="/../images/image-20240721170718782.png" alt="image-20240721170718782"></p>
+<h3 id="web7"><a href="#web7" class="headerlink" title="web7"></a>web7</h3><p>git源码泄露 .git&#x2F;index.php</p>
+<p><img src="/../images/image-20240721171208266.png" alt="image-20240721171208266"></p>
+<h3 id="web8"><a href="#web8" class="headerlink" title="web8"></a>web8</h3><p>svn信息泄露   .svn&#x2F;</p>
+<p><img src="/../images/image-20240721171331070.png" alt="image-20240721171331070"></p>
+<h3 id="web9"><a href="#web9" class="headerlink" title="web9"></a>web9</h3><p>vim缓存信息泄露 index.php.swp</p>
+<h3 id="web10"><a href="#web10" class="headerlink" title="web10"></a>web10</h3><p>抓包发现cookie信息泄露 注意要进行一次url编码</p>
+<p><img src="/../images/image-20240721175742192.png" alt="image-20240721175742192"></p>
+<h3 id="web11"><a href="#web11" class="headerlink" title="web11"></a>web11</h3><p>查找dns解析记录</p>
+<p><img src="/../images/image-20240721193005145.png" alt="image-20240721193005145"></p>
+<h3 id="web12"><a href="#web12" class="headerlink" title="web12"></a>web12</h3><p>进入网站后台管理页面，根据提示密码就在网站上 猜测用户名是admin</p>
+<p><img src="/../images/image-20240721193154914.png" alt="image-20240721193154914"></p>
+<p><img src="/../images/image-20240721193217888.png" alt="image-20240721193217888"></p>
+<p><img src="/../images/image-20240721193300130.png" alt="image-20240721193300130"></p>
+<h3 id="web13"><a href="#web13" class="headerlink" title="web13"></a>web13</h3><p>在页面下面发现document下载 发现后台账号密码</p>
+<p><img src="/../images/image-20240721203309923.png" alt="image-20240721203309923"></p>
+<p><img src="/../images/image-20240721203333477.png" alt="image-20240721203333477"></p>
+<p><img src="/../images/image-20240721203903527.png" alt="image-20240721203903527"></p>
+<h3 id="web14"><a href="#web14" class="headerlink" title="web14"></a>web14</h3><p>当我们根据提示在url后加加上eaditor后发现一个可以访问目录的地方</p>
+<p>在var&#x2F;www&#x2F;html&#x2F;nothoinghere 里面发现了flag</p>
+<p>我们访问该flag的目录</p>
+<p><img src="/../images/image-20240721213058095.png" alt="image-20240721213058095"></p>
+<p><img src="/../images/image-20240721213157796.png" alt="image-20240721213157796"></p>
+<p><img src="/../images/image-20240721213144303.png" alt="image-20240721213144303"></p>
+<h3 id="web15"><a href="#web15" class="headerlink" title="web15"></a>web15</h3><p>点击忘记密码后出现密保问题</p>
+<p>在主页有个qq邮箱</p>
+<p>查询地址发现是西安</p>
+<p><img src="/../images/image-20240721213901350.png" alt="image-20240721213901350"></p>
+<p><img src="/../images/image-20240721213907395.png" alt="image-20240721213907395"></p>
+<p><img src="/../images/image-20240721213849280.png" alt="image-20240721213849280"></p>
+<h3 id="web16"><a href="#web16" class="headerlink" title="web16"></a>web16</h3><p>php探针漏洞 在url后面加上&#x2F;tz.php</p>
+<p>点击phpinfo查找flag</p>
+<p><img src="/../images/image-20240721220723550.png" alt="image-20240721220723550"></p>
+<p><img src="/../images/image-20240721220734976.png" alt="image-20240721220734976"></p>
+<h3 id="web17"><a href="#web17" class="headerlink" title="web17"></a>web17</h3><p>访问 &#x2F;backup.sql 下载sql备份文件找到flag即可</p>
+<p><img src="/../images/image-20240722171721186.png" alt="image-20240722171721186"></p>
+<p><img src="/../images/image-20240722171715098.png" alt="image-20240722171715098"></p>
+<h3 id="web18"><a href="#web18" class="headerlink" title="web18"></a>web18</h3><p>查看网页源代码在js代码中发现了一个条件</p>
+<p>在控制台运行一下条件成立的结果得到提示，让我们访问110.php</p>
+<p>访问得到flag</p>
+<p><img src="/../images/image-20240722161015543.png" alt="image-20240722161015543"></p>
+<p><img src="/../images/image-20240722161153809.png" alt="image-20240722161153809"></p>
+<p><img src="/../images/image-20240722161247751.png" alt="image-20240722161247751"></p>
+<h3 id="web19"><a href="#web19" class="headerlink" title="web19"></a>web19</h3><p>查看源码发现 用户名和密码都已经在源码中写入了，但是密码明显是经过加密得到的，查看代码也能得到密码的加密方式解密得到密码即可</p>
+<p><img src="/../images/image-20240722162201661.png" alt="image-20240722162201661"></p>
+<p><img src="/../images/image-20240722162853730.png" alt="image-20240722162853730"></p>
+<p><img src="/../images/image-20240722162919725.png" alt="image-20240722162919725"></p>
+<p><img src="/../images/image-20240722162931967.png" alt="image-20240722162931967"></p>
+<h3 id="web20"><a href="#web20" class="headerlink" title="web20"></a>web20</h3><p>早期asp+access具有漏洞，一旦被扫描到目录下的存在m<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=db%E6%96%87%E4%BB%B6&spm=1001.2101.3001.7020">db文件</a>，攻击者可以直接访问地址进行下载获取数据库信息。</p>
+<p>我们直接 url +&#x2F;db&#x2F;db.mdb 下载数据库</p>
+<p>搜索flag即可</p>
+<p><img src="/../images/image-20240722164618236.png" alt="image-20240722164618236"></p>
+<h2 id="web爆破"><a href="#web爆破" class="headerlink" title="web爆破"></a>web爆破</h2><h3 id="web21"><a href="#web21" class="headerlink" title="web21"></a>web21</h3><p>我们抓包登录发现</p>
+<p>对用户名密码进行了加密 basic加密</p>
+<p>查询发现是 （用户名：密码）再进行base64加密</p>
+<p>利用这个结合字典进行爆破即可</p>
+<p><img src="/../images/image-20240722230834575.png" alt="image-20240722230834575"></p>
+<p><img src="/../images/image-20240722230840652.png" alt="image-20240722230840652"></p>
+<p><img src="/../images/image-20240722230859989.png" alt="image-20240722230859989"></p>
+<p><img src="/../images/image-20240722231137447.png" alt="image-20240722231137447"></p>
 
       
     </div>
